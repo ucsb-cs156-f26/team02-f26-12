@@ -20,7 +20,7 @@ function MenuItemReviewForm({
   const testIdPrefix = "MenuItemReviewForm";
 
   return (
-    <Form onSubmit={handleSubmit(submitAction)}>
+    <Form noValidate onSubmit={handleSubmit(submitAction)}>
       <Row>
         {initialContents && (
           <Col>
@@ -94,6 +94,7 @@ function MenuItemReviewForm({
               data-testid={testIdPrefix + "-stars"}
               id="stars"
               type="number"
+              step="any"
               isInvalid={Boolean(errors.stars)}
               {...register("stars", {
                 required: "Stars is required.",

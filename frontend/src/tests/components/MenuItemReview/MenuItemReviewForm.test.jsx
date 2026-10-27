@@ -100,11 +100,8 @@ describe("MenuItemReviewForm tests", () => {
     ).toBeInTheDocument();
 
     expect(screen.getByText("Reviewer Email is required.")).toBeInTheDocument();
-
     expect(screen.getByText("Stars is required.")).toBeInTheDocument();
-
     expect(screen.getByText("Date Reviewed is required.")).toBeInTheDocument();
-
     expect(screen.getByText("Comments are required.")).toBeInTheDocument();
   });
 
@@ -127,11 +124,86 @@ describe("MenuItemReviewForm tests", () => {
 
     const starsInput = screen.getByTestId(`${testId}-stars`);
 
-    fireEvent.change(starsInput, { target: { value: "6" } });
+    fireEvent.change(starsInput, {
+      target: { value: "6" },
+    });
+
     fireEvent.click(screen.getByTestId(`${testId}-submit`));
 
     expect(
       await screen.findByText("Stars cannot exceed 5."),
+    ).toBeInTheDocument();
+  });
+
+  test("validates stars must be a whole number", async () => {
+    renderForm();
+
+    const starsInput = screen.getByTestId(`${testId}-stars`);
+
+    fireEvent.change(starsInput, {
+      target: { value: "3.5" },
+    });
+
+    fireEvent.click(screen.getByTestId(`${testId}-submit`));
+
+    expect(
+      await screen.findByText("Stars must be a whole number."),
+    ).toBeInTheDocument();
+  });
+
+  test("rejects an invalid email address", async () => {
+    renderForm();
+
+    fireEvent.change(screen.getByTestId(`${testId}-reviewerEmail`), {
+      target: { value: "not-an-email" },
+    });
+
+    fireEvent.click(screen.getByTestId(`${testId}-submit`));
+
+    expect(
+      await screen.findByText("Enter a valid email address."),
+    ).toBeInTheDocument();
+  });
+
+  test("rejects email addresses with extra text", async () => {
+    renderForm();
+
+    fireEvent.change(screen.getByTestId(`${testId}-reviewerEmail`), {
+      target: { value: "student@ucsb.edu.extra@" },
+    });
+
+    fireEvent.click(screen.getByTestId(`${testId}-submit`));
+
+    expect(
+      await screen.findByText("Enter a valid email address."),
+    ).toBeInTheDocument();
+  });
+
+  test("rejects email addresses with invalid prefixes", async () => {
+    renderForm();
+
+    fireEvent.change(screen.getByTestId(`${testId}-reviewerEmail`), {
+      target: { value: "@@student@ucsb.edu" },
+    });
+
+    fireEvent.click(screen.getByTestId(`${testId}-submit`));
+
+    expect(
+      await screen.findByText("Enter a valid email address."),
+    ).toBeInTheDocument();
+  });
+
+  test("rejects negative star ratings", async () => {
+    renderForm();
+
+    fireEvent.change(screen.getByTestId(`${testId}-stars`), {
+      target: { value: "-1" },
+    });
+
+    fireEvent.click(screen.getByTestId(`${testId}-submit`));
+
+    expect(
+      await screen.findByText("Stars must be at least 0."),
     ).toBeInTheDocument();
   });
 
