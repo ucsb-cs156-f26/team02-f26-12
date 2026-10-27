@@ -1,4 +1,3 @@
-
 const menuItemReviewFixtures = {
   oneMenuItemReview: [
     {
