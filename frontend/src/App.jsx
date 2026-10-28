@@ -15,6 +15,10 @@ import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewInd
 import MenuItemReviewCreatePage from "main/pages/MenuItemReview/MenuItemReviewCreatePage";
 import MenuItemReviewEditPage from "main/pages/MenuItemReview/MenuItemReviewEditPage";
 
+import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+import HelpRequestCreatePage from "main/pages/HelpRequest/HelpRequestCreatePage";
+import HelpRequestEditPage from "main/pages/HelpRequest/HelpRequestEditPage";
+
 import PlaceholderIndexPage from "main/pages/Placeholder/PlaceholderIndexPage";
 import PlaceholderCreatePage from "main/pages/Placeholder/PlaceholderCreatePage";
 import PlaceholderEditPage from "main/pages/Placeholder/PlaceholderEditPage";
@@ -92,6 +96,29 @@ function App() {
             exact
             path="/menuitemreview/create"
             element={<MenuItemReviewCreatePage />}
+          />
+        </>
+      )}
+      {hasRole(currentUser, "ROLE_USER") && (
+        <>
+          <Route
+            exact
+            path="/helprequests"
+            element={<HelpRequestIndexPage />}
+          />
+        </>
+      )}
+      {hasRole(currentUser, "ROLE_ADMIN") && (
+        <>
+          <Route
+            exact
+            path="/helprequests/edit/:id"
+            element={<HelpRequestEditPage />}
+          />
+          <Route
+            exact
+            path="/helprequests/create"
+            element={<HelpRequestCreatePage />}
           />
         </>
       )}
