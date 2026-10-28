@@ -45,4 +45,3 @@ describe("HelpRequestEditPage tests", () => {
     ).toBeInTheDocument();
   });
 });
-

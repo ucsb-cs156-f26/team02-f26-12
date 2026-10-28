@@ -46,4 +46,3 @@ describe("HelpRequestCreatePage tests", () => {
     ).toBeInTheDocument();
   });
 });
-
