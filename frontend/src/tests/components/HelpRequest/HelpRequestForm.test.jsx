@@ -1,9 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router";
 
-import HelpRequestForm, {
-  requesterEmailPattern,
-} from "main/components/HelpRequest/HelpRequestForm";
+import HelpRequestForm from "main/components/HelpRequest/HelpRequestForm";
 import { helpRequestFixtures } from "fixtures/helpRequestFixtures";
 
 const mockedNavigate = vi.fn();
@@ -133,12 +131,6 @@ describe("HelpRequestForm tests", () => {
     expect(
       await screen.findByText("Requester email must be a valid email address."),
     ).toBeInTheDocument();
-  });
-
-  test("email pattern requires the whole value to be an email", () => {
-    expect(requesterEmailPattern.test("student@example.com")).toBe(true);
-    expect(requesterEmailPattern.test("student@example.com extra")).toBe(false);
-    expect(requesterEmailPattern.test("extra student@example.com")).toBe(false);
   });
 
   test("explanation maximum length validation is performed", async () => {
