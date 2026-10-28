@@ -236,6 +236,42 @@ describe("AppNavbar tests", () => {
 
     expect(screen.queryByText("Restaurants")).not.toBeInTheDocument();
     expect(screen.queryByText("UCSBDates")).not.toBeInTheDocument();
+    expect(screen.queryByText("UCSBOrganization")).not.toBeInTheDocument();
+  });
+
+  test.each([
+    ["ordinary user", currentUserFixtures.userOnly],
+    ["admin", currentUserFixtures.adminUser],
+  ])("renders the UCSBOrganization link for an %s", (_role, currentUser) => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <AppNavbar currentUser={currentUser} />
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    expect(
+      screen.getByRole("link", { name: "UCSBOrganization" }),
+    ).toHaveAttribute("href", "/ucsborganization");
+  });
+
+  test("hides the UCSBOrganization link without ROLE_USER", () => {
+    const currentUser = {
+      ...currentUserFixtures.userOnly,
+      root: { ...currentUserFixtures.userOnly.root, rolesList: [] },
+    };
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <AppNavbar currentUser={currentUser} />
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    expect(
+      screen.queryByRole("link", { name: "UCSBOrganization" }),
+    ).not.toBeInTheDocument();
   });
 
   test("MenuItemReview link does NOT show when not logged in", async () => {
