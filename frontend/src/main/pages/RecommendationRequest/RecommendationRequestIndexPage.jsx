@@ -43,7 +43,6 @@ export default function RecommendationRequestIndexPage() {
           recommendationRequests={recommendationRequests}
           currentUser={currentUser}
         />
-      </div>
     </BasicLayout>
   );
 }
