@@ -37,14 +37,13 @@ export default function UCSBDiningCommonsMenuItemCreatePage({
   };
 
   if (isSuccess && !storybook) {
-    return <Navigate to="/ucsbdiningcommonsmenuitem" />;
+    return <Navigate to="/diningcommonsmenuitem" />;
   }
 
   return (
     <BasicLayout>
       <div className="pt-2">
         <h1>Create New UCSBDiningCommonsMenuItem</h1>
-        ''
         <UCSBDiningCommonsMenuItemForm submitAction={onSubmit} />
       </div>
     </BasicLayout>
