@@ -119,6 +119,6 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
     expect(mockToast).toBeCalledWith(
       "New ucsbDiningCommonsMenuItem Created - id: 1 name: Pizza",
     );
-    expect(mockNavigate).toBeCalledWith({ to: "/ucsbdiningcommonsmenuitem" });
+    expect(mockNavigate).toBeCalledWith({ to: "/diningcommonsmenuitem" });
   });
 });
