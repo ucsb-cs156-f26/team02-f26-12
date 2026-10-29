@@ -3,7 +3,7 @@ import RecommendationRequestForm from "main/components/RecommendationRequest/Rec
 import { recommendationRequestFixtures } from "fixtures/recommendationRequestFixtures";
 
 export default {
-  title: "components/RecommendationRequests/RecommendationRequestForm",
+  title: "components/RecommendationRequest/RecommendationRequestForm",
   component: RecommendationRequestForm,
 };
 
