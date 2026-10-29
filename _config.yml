@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-12
 owner: ucsb-cs156-f26
 repo_name: team02-f26-12
-pull_requests: [{"author":{"id":"U_kgDODwB0ng","is_bot":false,"login":"mattoa63","name":"matt"},"headRefName":"maReqRec-edit","number":113,"title":"Add edit page for Recommendation Request","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/113"},{"author":{"id":"U_kgDODwB0ng","is_bot":false,"login":"mattoa63","name":"matt"},"headRefName":"ma-edit-page","number":88,"title":"Implement edit page for RecommendationRequest","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/88"}]
+pull_requests: [{"author":{"id":"U_kgDODwB0ng","is_bot":false,"login":"mattoa63","name":"matt"},"headRefName":"maReqRec-edit","number":113,"title":"Add edit page for Recommendation Request","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/113"}]
