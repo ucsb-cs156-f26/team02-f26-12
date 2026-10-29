@@ -136,6 +136,24 @@ describe("UCSBOrganizationTable tests", () => {
     expect(mockedNavigate).toHaveBeenCalledWith("/ucsborganization/edit/MATH");
   });
 
+  test.each([
+    ["A/B", "A%2FB"],
+    ["A?#%", "A%3F%23%25"],
+  ])("Edit preserves special characters in code %s", (orgCode, encodedCode) => {
+    renderTable({
+      organizations: [
+        { ...ucsbOrganizationFixtures.oneOrganization[0], orgCode },
+      ],
+      currentUser: currentUserFixtures.adminUser,
+    });
+
+    fireEvent.click(screen.getByTestId(`${testId}-cell-row-0-col-Edit-button`));
+
+    expect(mockedNavigate).toHaveBeenCalledWith(
+      `/ucsborganization/edit/${encodedCode}`,
+    );
+  });
+
   test("Delete sends the selected code and displays the success message", async () => {
     const message = { message: "UCSBOrganization with id MATH deleted" };
     const consoleSpy = vi.spyOn(console, "log").mockImplementation(() => {});
