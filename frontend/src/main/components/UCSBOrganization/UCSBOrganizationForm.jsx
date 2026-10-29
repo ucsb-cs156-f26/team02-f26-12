@@ -74,21 +74,6 @@ function UCSBOrganizationForm({
         </Form.Control.Feedback>
       </Form.Group>
 
-      {/* <Form.Group className="mb-3">
-        <Form.Label htmlFor="inactive">Inactive?</Form.Label>
-        <Form.Control
-          data-testid={testIdPrefix + "-inactive"}
-          id="inactive"
-          type="checkbox"
-          label="inactive"
-          isInvalid={Boolean(errors.description)}
-          {...register("inactive")}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors.orgTranslation?.message}
-        </Form.Control.Feedback>
-      </Form.Group> */}
-
       <Form.Group className="mb-3">
         <Form.Label htmlFor="inactive">Inactive?</Form.Label>
         <Form.Check
