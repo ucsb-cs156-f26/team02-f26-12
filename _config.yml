@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-12
 owner: ucsb-cs156-f26
 repo_name: team02-f26-12
-pull_requests: [{"author":{"id":"U_kgDOCNnsDQ","is_bot":false,"login":"AdrienTran","name":""},"headRefName":"at-integration-tests-menu-items","number":118,"title":"Created ITs for UCSBDiningCommonsMenuItem db table","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/118"}]
+pull_requests: [{"author":{"id":"U_kgDOCNnsDQ","is_bot":false,"login":"AdrienTran","name":""},"headRefName":"at-e2e-tests-menu-items","number":119,"title":"Create e2e tests for UCSBDiningCommonsMenuItem","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/119"},{"author":{"id":"U_kgDOCNnsDQ","is_bot":false,"login":"AdrienTran","name":""},"headRefName":"at-integration-tests-menu-items","number":118,"title":"Created ITs for UCSBDiningCommonsMenuItem db table","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/118"}]
