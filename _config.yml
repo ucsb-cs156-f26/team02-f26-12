@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-12
 owner: ucsb-cs156-f26
 repo_name: team02-f26-12
-pull_requests: [{"author":{"id":"U_kgDODfpqSw","is_bot":false,"login":"rmacasa-cloud","name":"Red Macasa"},"headRefName":"rm-jpa04-e2e-test","number":139,"title":"Add ArticleWebIT end to end tests","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/139"},{"author":{"id":"U_kgDODfpqSw","is_bot":false,"login":"rmacasa-cloud","name":"Red Macasa"},"headRefName":"rm-jpa04-integration-test","number":138,"title":"Add ArticleIT integration tests","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/138"}]
+pull_requests: [{"author":{"id":"U_kgDODfpqSw","is_bot":false,"login":"rmacasa-cloud","name":"Red Macasa"},"headRefName":"rm-jpa04-e2e-test","number":139,"title":"Add ArticleWebIT end to end tests","url":"https://github.com/ucsb-cs156-f26/team02-f26-12/pull/139"}]
