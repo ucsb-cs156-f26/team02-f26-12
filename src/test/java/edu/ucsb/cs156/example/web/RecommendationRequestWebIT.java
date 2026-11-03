@@ -35,13 +35,6 @@ public class RecommendationRequestWebIT extends WebTestCase {
     assertThat(page.getByTestId("RecommendationRequestTable-cell-row-0-col-explanation"))
         .hasText("PhD for CS at MIT");
 
-    // page.getByTestId("RecommendationRequestTable-cell-row-0-col-Edit-button").click();
-    // assertThat(page.getByText("Edit RecommendationRequest")).isVisible();
-    // page.getByTestId("RecommendationRequestForm-explanation")
-    //     .fill("PhD for Philosophy at Berkeley");
-    // page.getByTestId("RecommendationRequestForm-submit").click();
-
-    // assertThat(page.getByTestId("RecommendationRequestTable-cell-row-0-col-explanation")).hasText("PhD for Philosophy at Berkeley");
     page.getByTestId("RecommendationRequestTable-cell-row-0-col-Edit-button").click();
     assertThat(page.getByText("Edit RecommendationRequest")).isVisible();
     page.getByTestId("RecommendationRequestForm-requesterEmail").fill("freddyfazbear@ucsb.edu");
@@ -55,7 +48,6 @@ public class RecommendationRequestWebIT extends WebTestCase {
 
     assertThat(page.getByTestId("RecommendationRequestTable-cell-row-0-col-explanation"))
         .hasText("PhD for Philosophy at Berkeley");
-    // a
     page.getByTestId("RecommendationRequestTable-cell-row-0-col-Delete-button").click();
 
     assertThat(page.getByTestId("RecommendationRequestTable-cell-row-0-col-requesterEmail"))
